@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgcoj81fcbr8y"
-path="res://.godot/imported/shoe-L.PNG-ed86f2cce2774352273d58873180cb7b.ctex"
+uid="uid://dyy5243ygmguy"
+path="res://.godot/imported/eye-open.PNG-993766af83f5f3d8aaa1bcd470863088.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/shoe-L.PNG"
-dest_files=["res://.godot/imported/shoe-L.PNG-ed86f2cce2774352273d58873180cb7b.ctex"]
+source_file="res://assets/tessa-furry/eye-open.PNG"
+dest_files=["res://.godot/imported/eye-open.PNG-993766af83f5f3d8aaa1bcd470863088.ctex"]
 
 [params]
 

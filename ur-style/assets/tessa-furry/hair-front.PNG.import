@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oa462h5rn5r5"
-path="res://.godot/imported/leg-upper-R.PNG-db41b241d733376f8d19223dd0a0f731.ctex"
+uid="uid://bud5t4ccoygrc"
+path="res://.godot/imported/hair-front.PNG-818cd6cc04e20759b0aa6fa2bcfe9629.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/leg-upper-R.PNG"
-dest_files=["res://.godot/imported/leg-upper-R.PNG-db41b241d733376f8d19223dd0a0f731.ctex"]
+source_file="res://assets/tessa-furry/hair-front.PNG"
+dest_files=["res://.godot/imported/hair-front.PNG-818cd6cc04e20759b0aa6fa2bcfe9629.ctex"]
 
 [params]
 

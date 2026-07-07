@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj17r3nerhdj5"
-path="res://.godot/imported/ear-L.PNG-c9d34410032062d3ec64341c5f2f957a.ctex"
+uid="uid://dbq5t0x4evvq2"
+path="res://.godot/imported/ear-R.PNG-3ae68bd4b8ece8e20c0003789456160a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/ear-L.PNG"
-dest_files=["res://.godot/imported/ear-L.PNG-c9d34410032062d3ec64341c5f2f957a.ctex"]
+source_file="res://assets/tessa-furry/ear-R.PNG"
+dest_files=["res://.godot/imported/ear-R.PNG-3ae68bd4b8ece8e20c0003789456160a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpvebwmqrblwm"
-path="res://.godot/imported/eyebrow.PNG-abff391b87e79523de52a20ac4bae55d.ctex"
+uid="uid://dh455y4v1plwx"
+path="res://.godot/imported/shoe-R.PNG-b0dae115f79a486d91b04e848db14704.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/eyebrow.PNG"
-dest_files=["res://.godot/imported/eyebrow.PNG-abff391b87e79523de52a20ac4bae55d.ctex"]
+source_file="res://assets/tessa-furry/shoe-R.PNG"
+dest_files=["res://.godot/imported/shoe-R.PNG-b0dae115f79a486d91b04e848db14704.ctex"]
 
 [params]
 

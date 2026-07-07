@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpa8ppiim51qr"
-path="res://.godot/imported/leg-upper-L.PNG-0611ac3d6032f8ce6940ff7a80164377.ctex"
+uid="uid://bgcoj81fcbr8y"
+path="res://.godot/imported/shoe-L.PNG-9a16f6200cf65cd500a7495ff5cdb2d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/leg-upper-L.PNG"
-dest_files=["res://.godot/imported/leg-upper-L.PNG-0611ac3d6032f8ce6940ff7a80164377.ctex"]
+source_file="res://assets/tessa-furry/shoe-L.PNG"
+dest_files=["res://.godot/imported/shoe-L.PNG-9a16f6200cf65cd500a7495ff5cdb2d7.ctex"]
 
 [params]
 

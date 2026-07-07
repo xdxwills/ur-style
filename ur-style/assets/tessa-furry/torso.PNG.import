@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy6bqgy4oms3e"
-path="res://.godot/imported/lower-arm-R.PNG-935b2a89a7f4f4f7b6d34ec48c1f87a9.ctex"
+uid="uid://d0a2abnq3cki5"
+path="res://.godot/imported/torso.PNG-9f72bacf3d6cd5b93dd085e115bdff55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/lower-arm-R.PNG"
-dest_files=["res://.godot/imported/lower-arm-R.PNG-935b2a89a7f4f4f7b6d34ec48c1f87a9.ctex"]
+source_file="res://assets/tessa-furry/torso.PNG"
+dest_files=["res://.godot/imported/torso.PNG-9f72bacf3d6cd5b93dd085e115bdff55.ctex"]
 
 [params]
 

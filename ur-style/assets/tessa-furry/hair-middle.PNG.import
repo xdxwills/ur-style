@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3b88ibk5mpe4"
-path="res://.godot/imported/hair-middle.PNG-67e27f104594c219580d479dcb9d0677.ctex"
+path="res://.godot/imported/hair-middle.PNG-6c7f58cd4b31395bd2e6da0854e7949c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/hair-middle.PNG"
-dest_files=["res://.godot/imported/hair-middle.PNG-67e27f104594c219580d479dcb9d0677.ctex"]
+source_file="res://assets/tessa-furry/hair-middle.PNG"
+dest_files=["res://.godot/imported/hair-middle.PNG-6c7f58cd4b31395bd2e6da0854e7949c.ctex"]
 
 [params]
 

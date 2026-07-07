@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://codtu0c6e53w"
-path="res://.godot/imported/hair-back.PNG-6978de922fd9771ac9b3e06794ee63a2.ctex"
+uid="uid://d7toy3gx2bae"
+path="res://.godot/imported/tail.PNG-d071ca3481639bc6a320f809958e490a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/hair-back.PNG"
-dest_files=["res://.godot/imported/hair-back.PNG-6978de922fd9771ac9b3e06794ee63a2.ctex"]
+source_file="res://assets/tessa-furry/tail.PNG"
+dest_files=["res://.godot/imported/tail.PNG-d071ca3481639bc6a320f809958e490a.ctex"]
 
 [params]
 

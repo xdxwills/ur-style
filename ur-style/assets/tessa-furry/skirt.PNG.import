@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0a2abnq3cki5"
-path="res://.godot/imported/torso.PNG-437e58d43cea3e718878025a1ddd51c2.ctex"
+uid="uid://ddet4odprbv8v"
+path="res://.godot/imported/skirt.PNG-dc45f43e34081edf302cfdd1a6548989.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/torso.PNG"
-dest_files=["res://.godot/imported/torso.PNG-437e58d43cea3e718878025a1ddd51c2.ctex"]
+source_file="res://assets/tessa-furry/skirt.PNG"
+dest_files=["res://.godot/imported/skirt.PNG-dc45f43e34081edf302cfdd1a6548989.ctex"]
 
 [params]
 

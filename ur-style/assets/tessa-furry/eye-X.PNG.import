@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6p6kkhwq4b0r"
-path="res://.godot/imported/hair-middle-back.PNG-ee7481d69d95d82ba8002be4be03f1cf.ctex"
+uid="uid://dgtn3nksm0oiq"
+path="res://.godot/imported/eye-X.PNG-9412d5597fca5024164e4c02eb4f8054.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/hair-middle-back.PNG"
-dest_files=["res://.godot/imported/hair-middle-back.PNG-ee7481d69d95d82ba8002be4be03f1cf.ctex"]
+source_file="res://assets/tessa-furry/eye-X.PNG"
+dest_files=["res://.godot/imported/eye-X.PNG-9412d5597fca5024164e4c02eb4f8054.ctex"]
 
 [params]
 

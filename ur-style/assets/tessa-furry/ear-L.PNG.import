@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cepp5p5803k2d"
-path="res://.godot/imported/upper-arm-R.PNG-5c44e824d75f416b4762bd17bcf5604d.ctex"
+uid="uid://dj17r3nerhdj5"
+path="res://.godot/imported/ear-L.PNG-6ffe4bee9ecfb66758f16b96e032991f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tessa-furry/upper-arm-R.PNG"
-dest_files=["res://.godot/imported/upper-arm-R.PNG-5c44e824d75f416b4762bd17bcf5604d.ctex"]
+source_file="res://assets/tessa-furry/ear-L.PNG"
+dest_files=["res://.godot/imported/ear-L.PNG-6ffe4bee9ecfb66758f16b96e032991f.ctex"]
 
 [params]
 

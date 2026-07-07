@@ -35,6 +35,7 @@
 [node name="scale-offset" type="Node3D" parent="rot-offset" unique_id=1094356403]
 
 [node name="pos-offset" type="Node3D" parent="rot-offset/scale-offset" unique_id=2123722314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.87, 0)
 
 [node name="ear-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=575289769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.28281593)
@@ -50,6 +51,7 @@ texture = ExtResource("3_w06kr")
 
 [node name="eye-closed-yay" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1600140313]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.67269135)
+visible = false
 texture = ExtResource("4_8oofr")
 
 [node name="eye-open" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1210230814]
@@ -59,7 +61,6 @@ texture = ExtResource("5_7cm6j")
 
 [node name="eye-X" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=19275554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.67269135)
-visible = false
 texture = ExtResource("6_25f0s")
 
 [node name="eyebrow" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=159891327]

@@ -33,6 +33,7 @@
 [node name="rot-offset" type="Node3D" parent="." unique_id=2110124720]
 
 [node name="scale-offset" type="Node3D" parent="rot-offset" unique_id=1094356403]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="pos-offset" type="Node3D" parent="rot-offset/scale-offset" unique_id=2123722314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.87, 0)

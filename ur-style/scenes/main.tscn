@@ -28,31 +28,17 @@ orientation = 2
 environment = SubResource("Environment_sugp2")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=716268912]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 16.458)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1525574e-07, 1.3280306, 1.3611732)
 projection = 1
-size = 25.0
+size = 3.0
 
 [node name="TessaSprite" parent="." unique_id=307342950 instance=ExtResource("1_o5qli")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1813699366]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.579319)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.21151662)
 mesh = SubResource("PlaneMesh_o5qli")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=416064832]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.03614, 15.207185)
-visible = false
-light_energy = 67.72
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1838300631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.3543388, 2.7187052)
 shadow_enabled = true
-spot_range = 50.923332
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=2027686399]
-transform = Transform3D(0.89243627, 0, -0.4511735, 0, 1, 0, 0.4511735, 0, 0.89243627, -29.21692, 12.03614, 29.911755)
-light_energy = 67.72
-shadow_enabled = true
-spot_range = 442.13
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=1582280602]
-transform = Transform3D(0.8925858, 0, 0.45087752, 0, 1, 0, -0.45087752, 0, 0.8925858, 29.217, 12.036, 29.912)
-light_energy = 67.72
-shadow_enabled = true
-spot_range = 442.13
+spot_range = 7.707312

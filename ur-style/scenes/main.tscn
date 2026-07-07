@@ -1,3 +1,26 @@
 [gd_scene format=3 uid="uid://c1wim0the56k4"]
 
+[ext_resource type="PackedScene" uid="uid://bbvrx3cp5ppj7" path="res://scenes/tessa-sprite.tscn" id="1_o5qli"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0wfyh"]
+sky_material = SubResource("ProceduralSkyMaterial_o5qli")
+
+[sub_resource type="Environment" id="Environment_sugp2"]
+background_mode = 2
+sky = SubResource("Sky_0wfyh")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="main" type="Node3D" unique_id=1183694288]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=411496245]
+environment = SubResource("Environment_sugp2")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=716268912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6498802)
+
+[node name="TessaSprite" parent="." unique_id=307342950 instance=ExtResource("1_o5qli")]

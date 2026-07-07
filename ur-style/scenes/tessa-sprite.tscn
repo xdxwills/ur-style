@@ -73,6 +73,7 @@ texture = ExtResource("8_a0k56")
 
 [node name="hair-back-most" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1822700325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5687494)
+visible = false
 texture = ExtResource("9_vo8sl")
 
 [node name="hair-back" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1218049976]
@@ -90,28 +91,6 @@ texture = ExtResource("12_p2xgt")
 [node name="hair-middle" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1798899088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.44170833)
 texture = ExtResource("13_y0s5o")
-
-[node name="leg-lower-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=2097380056]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.24510312)
-texture = ExtResource("14_dikmi")
-
-[node name="leg-lower-R" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1906316276]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.24510312)
-texture = ExtResource("15_x5ud7")
-
-[node name="leg-upper-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=18633223]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04863572)
-texture = ExtResource("16_8stl2")
-
-[node name="leg-upper-R" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=759167557]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04863572)
-texture = ExtResource("17_8ypvi")
-
-[node name="lower-arm-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1654194870]
-texture = ExtResource("18_vy5pb")
-
-[node name="lower-arm-R" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=738476897]
-texture = ExtResource("19_ac4yw")
 
 [node name="mouth" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1620188330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.22125673)
@@ -136,10 +115,58 @@ texture = ExtResource("24_sfwv2")
 [node name="torso" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=535413373]
 texture = ExtResource("25_jh17q")
 
-[node name="upper-arm-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1829029731]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.14875984)
+[node name="upper-arm-pivot-l" type="Node3D" parent="rot-offset/scale-offset/pos-offset" unique_id=2113520734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.991, 5.092, 0)
+
+[node name="upper-arm-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-l" unique_id=1829029731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.991, -5.092, -0.14875984)
 texture = ExtResource("26_jy2rc")
 
-[node name="upper-arm-R" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset" unique_id=152330773]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.14875984)
+[node name="lower-arm-pivot-L" type="Node3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-l" unique_id=1282091432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.995, -2.42, 0)
+
+[node name="lower-arm-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-l/lower-arm-pivot-L" unique_id=1654194870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9860001, -2.672, 0)
+texture = ExtResource("18_vy5pb")
+
+[node name="upper-arm-pivot-R" type="Node3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1098072153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99058235, 5.092066, 0)
+
+[node name="upper-arm-R" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-R" unique_id=152330773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99058235, -5.092066, -0.14875984)
 texture = ExtResource("27_m57br")
+
+[node name="lower-arm-pivot-R" type="Node3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-R" unique_id=1871027601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99481475, -2.420024, 0)
+
+[node name="lower-arm-R" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-R/lower-arm-pivot-R" unique_id=738476897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9853971, -2.672042, 0)
+texture = ExtResource("19_ac4yw")
+
+[node name="leg-lower-pivot-L" type="Node3D" parent="rot-offset/scale-offset/pos-offset" unique_id=2111690306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, -9.12, 0)
+
+[node name="leg-lower-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/leg-lower-pivot-L" unique_id=2097380056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 9.12, -0.4)
+texture = ExtResource("14_dikmi")
+
+[node name="leg-upper-pivot-L" type="Node3D" parent="rot-offset/scale-offset/pos-offset/leg-lower-pivot-L" unique_id=1955596774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5492494, 5.8341947, 0)
+
+[node name="leg-upper-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/leg-lower-pivot-L/leg-upper-pivot-L" unique_id=18633223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2007506, 3.2858052, -0.04863572)
+texture = ExtResource("16_8stl2")
+
+[node name="leg-lower-pivot-R" type="Node3D" parent="rot-offset/scale-offset/pos-offset" unique_id=1554326978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, -9.12, 0)
+
+[node name="leg-lower-R" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/leg-lower-pivot-R" unique_id=1906316276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 9.12, -0.4)
+texture = ExtResource("15_x5ud7")
+
+[node name="leg-upper-pivot-R" type="Node3D" parent="rot-offset/scale-offset/pos-offset/leg-lower-pivot-R" unique_id=485748475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.549, 5.834, 0)
+
+[node name="leg-upper-R" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/leg-lower-pivot-R/leg-upper-pivot-R" unique_id=759167557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.201, 3.2859998, -0.04863572)
+texture = ExtResource("17_8ypvi")

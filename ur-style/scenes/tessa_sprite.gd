@@ -26,7 +26,7 @@ var knee_rot_amplitude: float = deg_to_rad(3)
 
 # Controls for snappy timing
 var speed_min_factor: float = 0.6    # slowest multiplier (must be > 0)
-var speed_max_factor: float = 3.0    # fastest multiplier
+var speed_max_factor: float = 2.0    # fastest multiplier
 var speed_snap_pow: float = 3.0      # >1 sharpens peak, <1 flattens it
 
 

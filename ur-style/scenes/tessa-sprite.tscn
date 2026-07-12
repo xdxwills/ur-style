@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bbvrx3cp5ppj7"]
 
 [ext_resource type="Texture2D" uid="uid://dj17r3nerhdj5" path="res://assets/tessa-furry/ear-L.PNG" id="1_4n2y1"]
+[ext_resource type="Script" uid="uid://bnes7mvsnn7fo" path="res://scenes/tessa_sprite.gd" id="1_cvam7"]
 [ext_resource type="Texture2D" uid="uid://bljyrhy1nk4u1" path="res://assets/tessa-furry/ear-R-front.PNG" id="2_rsfao"]
 [ext_resource type="Texture2D" uid="uid://dbq5t0x4evvq2" path="res://assets/tessa-furry/ear-R.PNG" id="3_w06kr"]
 [ext_resource type="Texture2D" uid="uid://bat3yqanqr4p2" path="res://assets/tessa-furry/eye-closed-yay.PNG" id="4_8oofr"]
@@ -28,7 +29,13 @@
 [ext_resource type="Texture2D" uid="uid://capn72k8jd2at" path="res://assets/tessa-furry/upper-arm-L.PNG" id="26_jy2rc"]
 [ext_resource type="Texture2D" uid="uid://cepp5p5803k2d" path="res://assets/tessa-furry/upper-arm-R.PNG" id="27_m57br"]
 
-[node name="TessaSprite" type="Node3D" unique_id=307342950]
+[node name="TessaSprite" type="Node3D" unique_id=307342950 node_paths=PackedStringArray("scale_offset", "shoulder_L", "elbow_L", "shoulder_R", "elbow_R")]
+script = ExtResource("1_cvam7")
+scale_offset = NodePath("rot-offset/scale-offset")
+shoulder_L = NodePath("rot-offset/scale-offset/pos-offset/upper-arm-pivot-L")
+elbow_L = NodePath("rot-offset/scale-offset/pos-offset/upper-arm-pivot-L/lower-arm-pivot-L")
+shoulder_R = NodePath("rot-offset/scale-offset/pos-offset/upper-arm-pivot-R")
+elbow_R = NodePath("rot-offset/scale-offset/pos-offset/upper-arm-pivot-R/lower-arm-pivot-R")
 
 [node name="rot-offset" type="Node3D" parent="." unique_id=2110124720]
 
@@ -127,18 +134,18 @@ texture = ExtResource("24_sfwv2")
 alpha_cut = 2
 texture = ExtResource("25_jh17q")
 
-[node name="upper-arm-pivot-l" type="Node3D" parent="rot-offset/scale-offset/pos-offset" unique_id=2113520734]
+[node name="upper-arm-pivot-L" type="Node3D" parent="rot-offset/scale-offset/pos-offset" unique_id=2113520734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.991, 5.092, 0)
 
-[node name="upper-arm-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-l" unique_id=1829029731]
+[node name="upper-arm-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-L" unique_id=1829029731]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.991, -5.092, -0.14875984)
 alpha_cut = 2
 texture = ExtResource("26_jy2rc")
 
-[node name="lower-arm-pivot-L" type="Node3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-l" unique_id=1282091432]
+[node name="lower-arm-pivot-L" type="Node3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-L" unique_id=1282091432]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.995, -2.42, 0)
 
-[node name="lower-arm-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-l/lower-arm-pivot-L" unique_id=1654194870]
+[node name="lower-arm-L" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-arm-pivot-L/lower-arm-pivot-L" unique_id=1654194870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9860001, -2.672, 0)
 alpha_cut = 2
 texture = ExtResource("18_vy5pb")

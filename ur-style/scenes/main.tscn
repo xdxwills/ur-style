@@ -15,7 +15,7 @@ sky = SubResource("Sky_0wfyh")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0.4244187, 0.42441872, 0.4244187, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
 material = SubResource("StandardMaterial3D_o5qli")
@@ -39,6 +39,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.21151662)
 mesh = SubResource("PlaneMesh_o5qli")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1838300631]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.3543388, 2.7187052)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.5514357, 1.839248)
 shadow_enabled = true
 spot_range = 7.707312

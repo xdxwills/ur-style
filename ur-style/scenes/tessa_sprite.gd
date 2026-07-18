@@ -50,11 +50,12 @@ var knee_rot_amplitude: float = deg_to_rad(5)
 # Controls for snappy timing
 var speed_min_factor: float = 0.6    # slowest multiplier (must be > 0)
 var speed_max_factor: float = 1.6    # fastest multiplier
-var speed_snap_pow: float = 0.5      # >1 sharpens peak, <1 flattens it
+var speed_snap_pow: float = 1.5      # >1 sharpens peak, <1 flattens it
 
 
 var curr_animation_value: float = 0.0
-var animation_progress_per_sec: float = 1.0
+var animation_progress_per_sec: float = (120.0 / 60.0) / 2.0
+const phase_offset: float = 0.0 * (2.0 * PI)
 
 func _process(delta: float) -> void:
 	curr_animation_value = fposmod(curr_animation_value, 1.0) 
@@ -73,7 +74,7 @@ func _process(delta: float) -> void:
 	# map shaped_signal into a speed factor between min and max
 	var speed_factor: float = lerp(speed_min_factor, speed_max_factor, shaped_signal)
 	
-	curr_animation_value += animation_progress_per_sec * delta * speed_factor
+	curr_animation_value += (animation_progress_per_sec * delta * speed_factor)
 	
 	# keep curr_rotation in range
 	curr_rotation = wrapf(curr_rotation, 0, (2.0 * PI))
@@ -157,7 +158,7 @@ func _process(delta: float) -> void:
 	
 
 func solve_cos(curr_rotation: float, amplitude: float, direction: bool = true, phase: float = 0.0) -> float:
-	var solved_cos: float = cos(curr_rotation + phase) * amplitude * -1.0
+	var solved_cos: float = cos(curr_rotation + phase + phase_offset) * amplitude * -1.0
 	if direction:
 		solved_cos -= amplitude
 	else:

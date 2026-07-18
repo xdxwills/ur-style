@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cp3h55pyw74v3"
+path="res://.godot/imported/[Airi] - Ur Style.mp3-cea2469159dc00f73cb08cc42c8ab6bc.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/[Airi] - Ur Style.mp3"
+dest_files=["res://.godot/imported/[Airi] - Ur Style.mp3-cea2469159dc00f73cb08cc42c8ab6bc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

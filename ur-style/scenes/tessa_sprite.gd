@@ -35,6 +35,9 @@ extends Node3D
 @export var ear_L: Node3D
 @export var ear_R: Node3D
 
+@export var hair_front: Node3D
+
+@export var hair_middle: Node3D
 
 var scale_amplitude: float = 0.015
 var arm_rot_amplitude: float = deg_to_rad(2.5)
@@ -77,7 +80,7 @@ func _process(delta: float) -> void:
 	scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude, true)
 	scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude, true)
 	
-	position.y = solve_cos(curr_rotation, .05, false)
+	#position.y = solve_cos(curr_rotation, .05, false)
 	
 	lower_body.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * 2, true)
 	lower_body.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * 2, true)
@@ -130,6 +133,17 @@ func _process(delta: float) -> void:
 	ear_R.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * .5, true)
 	ear_R.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * .5, true)
 	
+	
+	hair_front.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * 2., true)
+	hair_front.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * 2., true)
+	
+	hair_front.position.y = 7.402 - solve_cos(curr_rotation, .08, true)
+	
+	
+	hair_middle.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * 2., true)
+	hair_middle.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * 2., true)
+	
+	hair_middle.position.y = 8.221 - solve_cos(curr_rotation, .04, true)
 
 func solve_cos(curr_rotation: float, amplitude: float, direction: bool = true) -> float:
 	var solved_cos: float = cos(curr_rotation) * amplitude * -1.0

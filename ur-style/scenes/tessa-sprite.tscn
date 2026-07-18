@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://capn72k8jd2at" path="res://assets/tessa-furry/upper-arm-L.PNG" id="26_jy2rc"]
 [ext_resource type="Texture2D" uid="uid://cepp5p5803k2d" path="res://assets/tessa-furry/upper-arm-R.PNG" id="27_m57br"]
 
-[node name="TessaSprite" type="Node3D" unique_id=307342950 node_paths=PackedStringArray("scale_offset", "lower_body", "arm_parent", "shoulder_L", "elbow_L", "shoulder_R", "elbow_R", "ankle_L", "knee_L", "ankle_R", "knee_R", "upper_body", "torso_parent", "skirt_parent", "tail_parent", "head", "eyes", "ear_L", "ear_R", "hair_front", "hair_middle")]
+[node name="TessaSprite" type="Node3D" unique_id=307342950 node_paths=PackedStringArray("scale_offset", "lower_body", "arm_parent", "shoulder_L", "elbow_L", "shoulder_R", "elbow_R", "ankle_L", "knee_L", "ankle_R", "knee_R", "upper_body", "torso_parent", "skirt_parent", "tail_parent", "head", "eyes", "ear_L", "ear_R", "hair_front", "hair_middle", "hair_middle_back")]
 script = ExtResource("1_cvam7")
 scale_offset = NodePath("rot-offset/scale-offset")
 lower_body = NodePath("rot-offset/scale-offset/pos-offset/lower-body")
@@ -52,6 +52,7 @@ ear_L = NodePath("rot-offset/scale-offset/pos-offset/upper-body/head/hair/ears-p
 ear_R = NodePath("rot-offset/scale-offset/pos-offset/upper-body/head/hair/ears-parent/ear-R")
 hair_front = NodePath("rot-offset/scale-offset/pos-offset/upper-body/head/hair/hair-front-parent")
 hair_middle = NodePath("rot-offset/scale-offset/pos-offset/upper-body/head/hair/hair-middle-parent")
+hair_middle_back = NodePath("rot-offset/scale-offset/pos-offset/upper-body/head/hair/hair-middle-back-parent")
 
 [node name="rot-offset" type="Node3D" parent="." unique_id=2110124720]
 
@@ -89,11 +90,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5687494)
 alpha_cut = 2
 texture = ExtResource("9_vo8sl")
 
-[node name="hair-back" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-body/head/hair" unique_id=1218049976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25139046)
-alpha_cut = 2
-texture = ExtResource("10_cvam7")
-
 [node name="hair-front-parent" type="Node3D" parent="rot-offset/scale-offset/pos-offset/upper-body/head/hair" unique_id=50163079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4019375, 0)
 
@@ -102,8 +98,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.4019384, 0.549839)
 alpha_cut = 2
 texture = ExtResource("11_ab3jo")
 
-[node name="hair-middle-back" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-body/head/hair" unique_id=1599169171]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.36773634)
+[node name="hair-middle-back-parent" type="Node3D" parent="rot-offset/scale-offset/pos-offset/upper-body/head/hair" unique_id=1409468212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.56246, 0)
+
+[node name="hair-back" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-body/head/hair/hair-middle-back-parent" unique_id=1218049976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.562461, 0.25139046)
+alpha_cut = 2
+texture = ExtResource("10_cvam7")
+
+[node name="hair-middle-back" type="Sprite3D" parent="rot-offset/scale-offset/pos-offset/upper-body/head/hair/hair-middle-back-parent" unique_id=1599169171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.562461, 0.36773634)
 alpha_cut = 2
 texture = ExtResource("12_p2xgt")
 

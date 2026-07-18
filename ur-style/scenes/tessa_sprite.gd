@@ -2,7 +2,11 @@ extends Node3D
 
 @export var scale_offset: Node3D
 
+@export var lower_body: Node3D
+
 # ARMS
+@export var arm_parent: Node3D
+
 @export var shoulder_L: Node3D
 @export var elbow_L: Node3D
 
@@ -19,12 +23,24 @@ extends Node3D
 # UPPER BODY
 @export var upper_body: Node3D
 
+@export var torso_parent: Node3D
+@export var skirt_parent: Node3D
+
+@export var tail_parent: Node3D
+
+@export var head: Node3D
+
+@export var eyes: Node3D
+
+@export var ear_L: Node3D
+@export var ear_R: Node3D
+
 
 var scale_amplitude: float = 0.015
-var arm_rot_amplitude: float = deg_to_rad(1.5)
-var elbow_rot_amplitude: float = deg_to_rad(1.5)
-var ankle_rot_amplitude: float = deg_to_rad(1)
-var knee_rot_amplitude: float = deg_to_rad(3)
+var arm_rot_amplitude: float = deg_to_rad(2.5)
+var elbow_rot_amplitude: float = deg_to_rad(2.5)
+var ankle_rot_amplitude: float = deg_to_rad(1.5)
+var knee_rot_amplitude: float = deg_to_rad(5)
 
 # Controls for snappy timing
 var speed_min_factor: float = 0.6    # slowest multiplier (must be > 0)
@@ -61,6 +77,14 @@ func _process(delta: float) -> void:
 	scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude, true)
 	scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude, true)
 	
+	position.y = solve_cos(curr_rotation, .05, false)
+	
+	lower_body.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * 2, true)
+	lower_body.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * 2, true)
+	
+	#arm_parent.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * 0.75, true)
+	#arm_parent.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * 0.75, true)
+	
 	shoulder_L.rotation.z = solve_cos(curr_rotation, arm_rot_amplitude, true)
 	shoulder_R.rotation.z = solve_cos(curr_rotation + PI, arm_rot_amplitude, false)
 	
@@ -74,8 +98,37 @@ func _process(delta: float) -> void:
 	ankle_R.rotation.z = solve_cos(curr_rotation + PI, ankle_rot_amplitude, false)
 	knee_R.rotation.z = solve_cos(curr_rotation, knee_rot_amplitude, true)
 	
-	
 	upper_body.position.y = solve_cos(curr_rotation, .15, false)
+	
+	torso_parent.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * 3, true)
+	torso_parent.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * 3, true)
+	
+	torso_parent.position.y = 4.087 - solve_cos(curr_rotation, .05, false)
+	
+	skirt_parent.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude, false)
+	skirt_parent.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude, false)
+	
+	
+	var tail_rot: float = deg_to_rad(25)
+	tail_parent.rotation.z = solve_cos(curr_rotation, tail_rot, true) + solve_cos(curr_rotation, tail_rot, false)
+	tail_parent.scale.x = solve_cos(curr_rotation, 0.5, true) + solve_cos(curr_rotation, 0.5, false)
+	
+	
+	head.position.y = solve_cos(curr_rotation, .05, true)
+	
+	eyes.scale.x = 1.0 + solve_cos(curr_rotation, scale_amplitude * 4., true)
+	eyes.scale.y = 1.0 - solve_cos(curr_rotation, scale_amplitude * 4., true)
+	
+	ear_L.rotation.z = solve_cos(curr_rotation, deg_to_rad(5), true)
+	ear_R.rotation.z = solve_cos(curr_rotation, deg_to_rad(5), true) * -1.
+	
+	ear_L.position.y = 8.502 + solve_cos(curr_rotation, .125, true)
+	ear_R.position.y = 8.502 + solve_cos(curr_rotation, .125, true)
+	
+	ear_L.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * .5, true)
+	ear_L.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * .5, true)
+	ear_R.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * .5, true)
+	ear_R.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * .5, true)
 	
 
 func solve_cos(curr_rotation: float, amplitude: float, direction: bool = true) -> float:

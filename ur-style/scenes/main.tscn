@@ -35,9 +35,9 @@ autoplay = true
 environment = SubResource("Environment_sugp2")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=716268912]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1525574e-07, 1.2151138, 1.3611732)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 1.361)
 projection = 1
-size = 3.0
+size = 2.75
 
 [node name="TessaSprite" parent="." unique_id=307342950 instance=ExtResource("1_o5qli")]
 

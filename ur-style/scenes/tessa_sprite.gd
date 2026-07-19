@@ -55,11 +55,11 @@ var knee_rot_amplitude: float = deg_to_rad(5)
 var speed_min_factor: float = 0.6    # slowest multiplier (must be > 0)
 var speed_max_factor: float = 1.6    # fastest multiplier
 var speed_snap_pow: float = 1.5      # >1 sharpens peak, <1 flattens it
-
+var speed_normalization: float = 1.0   # <-- add this line
 
 var curr_animation_value: float = 0.0
-var animation_progress_per_sec: float = (130.0 / 60.0) / 2.0
-const phase_offset: float = 0.175 * (2.0 * PI)
+var animation_progress_per_sec: float = (120.0 / 60.0) / 2.0
+const phase_offset: float = 0.0 * (2.0 * PI)
 
 var unwrapped_animation_value: float = 0.0
 
@@ -67,6 +67,7 @@ func _ready() -> void:
 	eye_closed.visible = false
 	eye_open.visible = true
 	eye_X.visible = false
+	_compute_speed_normalization()
 	
 
 func _process(delta: float) -> void:
@@ -84,7 +85,8 @@ func _process(delta: float) -> void:
 	var shaped_signal: float = pow(phase_signal, speed_snap_pow)
 
 	# map shaped_signal into a speed factor between min and max
-	var speed_factor: float = lerp(speed_min_factor, speed_max_factor, shaped_signal)
+	#var speed_factor: float = lerp(speed_min_factor, speed_max_factor, shaped_signal)
+	var speed_factor: float = lerp(speed_min_factor, speed_max_factor, shaped_signal) * speed_normalization
 	
 	curr_animation_value += (animation_progress_per_sec * delta * speed_factor)
 	unwrapped_animation_value += (animation_progress_per_sec * delta * speed_factor)
@@ -99,7 +101,7 @@ func _process(delta: float) -> void:
 		#eye_closed.visible = false
 	
 	# animation ends at beat 15
-	if (unwrapped_animation_value - phase_offset) > 14.6:
+	if int(unwrapped_animation_value - phase_offset) > 16:
 		get_tree().quit()
 	
 	if int(unwrapped_animation_value) > 11:
@@ -207,3 +209,16 @@ func solve_cos(curr_rotation: float, amplitude: float, direction: bool = true, p
 	else:
 		solved_cos += amplitude
 	return solved_cos
+
+
+func _compute_speed_normalization() -> void:
+	var samples: int = 2000
+	var sum_inv: float = 0.0
+	for i in range(samples):
+		var av: float = float(i) / float(samples)
+		var rot: float = av * PI * 2.0
+		var phase_signal: float = (1.0 + sin(rot)) * 0.5
+		var shaped_signal: float = pow(phase_signal, speed_snap_pow)
+		var raw_speed_factor: float = lerp(speed_min_factor, speed_max_factor, shaped_signal)
+		sum_inv += 1.0 / raw_speed_factor
+	speed_normalization = sum_inv / float(samples)

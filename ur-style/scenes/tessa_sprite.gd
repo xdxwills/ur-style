@@ -4,6 +4,10 @@ extends Node3D
 
 @export var lower_body: Node3D
 
+@export var eye_closed: Node3D
+@export var eye_open: Node3D
+@export var eye_X: Node3D
+
 # ARMS
 @export var arm_parent: Node3D
 
@@ -54,8 +58,16 @@ var speed_snap_pow: float = 1.5      # >1 sharpens peak, <1 flattens it
 
 
 var curr_animation_value: float = 0.0
-var animation_progress_per_sec: float = (120.0 / 60.0) / 2.0
-const phase_offset: float = 0.0 * (2.0 * PI)
+var animation_progress_per_sec: float = (130.0 / 60.0) / 2.0
+const phase_offset: float = 0.175 * (2.0 * PI)
+
+var unwrapped_animation_value: float = 0.0
+
+func _ready() -> void:
+	eye_closed.visible = false
+	eye_open.visible = true
+	eye_X.visible = false
+	
 
 func _process(delta: float) -> void:
 	curr_animation_value = fposmod(curr_animation_value, 1.0) 
@@ -75,10 +87,41 @@ func _process(delta: float) -> void:
 	var speed_factor: float = lerp(speed_min_factor, speed_max_factor, shaped_signal)
 	
 	curr_animation_value += (animation_progress_per_sec * delta * speed_factor)
+	unwrapped_animation_value += (animation_progress_per_sec * delta * speed_factor)
 	
 	# keep curr_rotation in range
 	curr_rotation = wrapf(curr_rotation, 0, (2.0 * PI))
 	# ==========================================================================================================
+	
+	#if int(unwrapped_animation_value) > 13:
+		#eye_X.visible = false
+		#eye_open.visible = true
+		#eye_closed.visible = false
+	
+	# animation ends at beat 15
+	if int(unwrapped_animation_value - phase_offset) > 15:
+		get_tree().quit()
+	
+	if int(unwrapped_animation_value) > 11:
+		eye_X.visible = false
+		eye_open.visible = false
+		eye_closed.visible = true
+	
+	elif int(unwrapped_animation_value) > 7:
+		eye_X.visible = false
+		eye_open.visible = true
+		eye_closed.visible = false
+	
+	elif int(unwrapped_animation_value) > 3:
+		eye_X.visible = true
+		eye_open.visible = false
+		eye_closed.visible = false
+	
+	elif int(unwrapped_animation_value) > 0:
+		eye_X.visible = false
+		eye_open.visible = true
+		eye_closed.visible = false
+	
 	
 	scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * 1.2, true)
 	scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * 1.2, true)
@@ -146,7 +189,7 @@ func _process(delta: float) -> void:
 	hair_middle.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * 2., true, PI/6)
 	hair_middle.scale.y = 1.0 + solve_cos(curr_rotation, scale_amplitude * 2., true, PI/6)
 	
-	hair_middle.position.y = 8.221 - solve_cos(curr_rotation, .01, true, PI/6)
+	hair_middle.position.y = 8.221 - solve_cos(curr_rotation, .04, true, PI/6)
 	
 	
 	hair_middle_back.scale.x = 1.0 - solve_cos(curr_rotation, scale_amplitude * 2., true, PI/4)

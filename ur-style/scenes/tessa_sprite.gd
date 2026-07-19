@@ -52,8 +52,8 @@ var ankle_rot_amplitude: float = deg_to_rad(1.5)
 var knee_rot_amplitude: float = deg_to_rad(5)
 
 # Controls for snappy timing
-var speed_min_factor: float = 0.6    # slowest multiplier (must be > 0)
-var speed_max_factor: float = 1.6    # fastest multiplier
+var speed_min_factor: float = 0.4    # slowest multiplier (must be > 0)
+var speed_max_factor: float = 2.0    # fastest multiplier
 var speed_snap_pow: float = 1.5      # >1 sharpens peak, <1 flattens it
 var speed_normalization: float = 1.0   # <-- add this line
 
@@ -101,7 +101,7 @@ func _process(delta: float) -> void:
 		#eye_closed.visible = false
 	
 	# animation ends at beat 15
-	if int(unwrapped_animation_value - phase_offset) > 16:
+	if int(unwrapped_animation_value - phase_offset) > 15:
 		get_tree().quit()
 	
 	if int(unwrapped_animation_value) > 11:

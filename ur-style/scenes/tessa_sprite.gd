@@ -99,7 +99,7 @@ func _process(delta: float) -> void:
 		#eye_closed.visible = false
 	
 	# animation ends at beat 15
-	if int(unwrapped_animation_value - phase_offset) > 15:
+	if int(unwrapped_animation_value - phase_offset) > 14:
 		get_tree().quit()
 	
 	if int(unwrapped_animation_value) > 11:

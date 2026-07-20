@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbvrx3cp5ppj7"]
 
 [ext_resource type="Texture2D" uid="uid://dj17r3nerhdj5" path="res://assets/tessa-furry/ear-L.PNG" id="1_4n2y1"]
-[ext_resource type="Script" uid="uid://bnes7mvsnn7fo" path="res://scenes/tessa_sprite.gd" id="1_cvam7"]
+[ext_resource type="Script" uid="uid://bnes7mvsnn7fo" path="res://scripts/tessa_sprite.gd" id="1_cvam7"]
 [ext_resource type="Texture2D" uid="uid://bljyrhy1nk4u1" path="res://assets/tessa-furry/ear-R-front.PNG" id="2_rsfao"]
 [ext_resource type="Texture2D" uid="uid://dbq5t0x4evvq2" path="res://assets/tessa-furry/ear-R.PNG" id="3_w06kr"]
 [ext_resource type="Texture2D" uid="uid://bat3yqanqr4p2" path="res://assets/tessa-furry/eye-closed-yay.PNG" id="4_8oofr"]

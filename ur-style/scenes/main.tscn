@@ -2,6 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://bjh2c42hs3547" path="res://assets/audio/Trimmed - Ur Style Airi.mp3" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bbvrx3cp5ppj7" path="res://scenes/tessa-sprite.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://tfut8f4rl62c" path="res://scripts/background_rectangle.gd" id="3_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,11 +17,19 @@ sky = SubResource("Sky_0wfyh")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
-albedo_color = Color(0.4244187, 0.42441872, 0.4244187, 1)
+albedo_color = Color(1, 0, 0.30980393, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
 material = SubResource("StandardMaterial3D_o5qli")
 size = Vector2(256, 256)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0wfyh"]
+material = SubResource("StandardMaterial3D_0wfyh")
+size = Vector2(100, 2)
 orientation = 2
 
 [node name="main" type="Node3D" unique_id=1183694288]
@@ -47,5 +56,21 @@ mesh = SubResource("PlaneMesh_o5qli")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1838300631]
 transform = Transform3D(1, 0, 0, 0, 0.99725276, 0.07407368, 0, -0.07407368, 0.99725276, -2.3841858e-07, 1.5514357, 1.839248)
+light_energy = 4.944
 shadow_enabled = true
 spot_range = 7.707312
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1050479534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.18996799)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=110843053 node_paths=PackedStringArray("tessa_sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("PlaneMesh_0wfyh")
+script = ExtResource("3_sugp2")
+tessa_sprite = NodePath("../../TessaSprite")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D" unique_id=1612714091 node_paths=PackedStringArray("tessa_sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+mesh = SubResource("PlaneMesh_0wfyh")
+script = ExtResource("3_sugp2")
+tessa_sprite = NodePath("../../TessaSprite")

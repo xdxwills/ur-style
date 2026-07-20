@@ -1,4 +1,5 @@
 extends Node3D
+class_name TessaSprite
 
 @export var scale_offset: Node3D
 
@@ -62,6 +63,7 @@ var animation_progress_per_sec: float = (120.0 / 60.0) / 2.0
 const phase_offset: float = 0.0 * (2.0 * PI)
 
 var unwrapped_animation_value: float = 0.0
+var curr_rotation: float
 
 func _ready() -> void:
 	eye_closed.visible = false
@@ -73,7 +75,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	curr_animation_value = fposmod(curr_animation_value, 1.0) 
 	
-	var curr_rotation = curr_animation_value * PI * 2.0
+	curr_rotation = curr_animation_value * PI * 2.0
 	# ==========================================================================================================
 	# AI GENERATED CURR ROTATION SPEED SNAPPINESS RELATED CODE
 
@@ -202,8 +204,8 @@ func _process(delta: float) -> void:
 	
 	
 
-func solve_cos(curr_rotation: float, amplitude: float, direction: bool = true, phase: float = 0.0) -> float:
-	var solved_cos: float = cos(curr_rotation + phase + phase_offset) * amplitude * -1.0
+func solve_cos(curr_rot: float, amplitude: float, direction: bool = true, phase: float = 0.0) -> float:
+	var solved_cos: float = cos(curr_rot + phase + phase_offset) * amplitude * -1.0
 	if direction:
 		solved_cos -= amplitude
 	else:
